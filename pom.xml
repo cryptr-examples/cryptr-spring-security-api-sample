@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.cryptr</groupId>
 	<artifactId>test</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>test</name>
-	<description>Demo project for Spring Boot</description>
+	<version>0.1.0</version>
+	<name>Cryptr Spring security API Sample</name>
+	<description>Cryptr sample demonstration to secure API with spring security</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
