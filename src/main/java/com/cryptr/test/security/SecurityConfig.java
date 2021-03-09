@@ -29,7 +29,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       .mvcMatchers("/api/v1/").permitAll()
       .mvcMatchers("/api/v1/secured-resource/").authenticated()
       .mvcMatchers("/api/v1/secured-resource").authenticated()
-      .and().oauth2ResourceServer().jwt();
+      .mvcMatchers("/api/v1/resource-for-scope").hasAuthority("SCOPE_profile") // chose scope you want
+      .mvcMatchers("/api/v1/resource-with-any-scope").hasAnyAuthority("SCOPE_profile", "SCOPE_openid") // chose scopes you want
+        .and().oauth2ResourceServer().jwt();
   }
 
   JwtDecoder jwtDecoder() {
