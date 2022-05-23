@@ -22,4 +22,16 @@ public class APIController {
   public String privateEndpoint(){
     return "{\"id\": \"1\", \"data\": \"secured-data\"}";
   }
+  
+  @GetMapping(value = "/resource-for-scope")
+  public String resourceForScope(){
+    // this request requires a scope you define in security config
+    return "{\"id\": \"1\", \"data\": \"secured-data\"}";
+  }
+  
+  @GetMapping(value = "/resource-with-any-scope")
+  public String resourceForAnyScope(){
+    // This request requires a token with a scope contained in list defined insecurity config
+    return "{\"id\": \"1\", \"data\": \"secured-data\"}";
+  }
 }
